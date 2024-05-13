@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: 'Wonder';
+    src: url('../../assets/fonts/8bit_wonder/8-BITWONDER.TTF') format('truetype');
+
+    font-style: normal;
+    font-weight: normal;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    align-items: center;
+    background: #3b5cc4;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.expand {
+    align-self: center;
+    width: 50px;
+    height: 25px;
+    transform: translateY(2px);
+    transition: all 100ms ease-in;
+    z-index: 0;
+}
+
+.expand:active {
+    transform: translateY(85%);
+}
+
+
+.pokedex {
+    display: flex;
+}
+
+.left {
+    border: solid 1px black;
+    border-radius: 16px 4px 4px 16px;
+    box-shadow: -6px 6px 1px #8e062a;
+    background: #d30a40;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    height: 700px;
+    width: 500px;
+    z-index: 1;
+}
+
+.visor {
+    align-self: center;
+    background: #e3e3e3;
+    border: solid 1px black;
+    border-radius: 12px;
+    box-shadow: -3px 6px 1px #808080;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: 320px;
+    width: 80%;
+}
+
+.circles {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px
+}
+
+.circles > span {
+    align-self: center;
+    border: solid 1px black;
+    background-color: #d30a40;
+    border-radius: 100%;
+    height: 10px;
+    width: 10px;
+}
+
+.image {
+    margin-top: 10px;
+    align-self: center;
+    border: solid 1px;
+    border-radius: 6px;
+    height: 200px;
+    width: 90%;
+}
+
+.nn {
+    align-self: center;
+    align-items: center;
+    border: solid 1px red;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    height: 50px;
+    justify-content: end;
+    margin-top: 15px;
+    width: 90%;
+}
+
+.stats {
+    align-self: center;
+    border: solid 1px;
+    background: #61872d;
+    box-shadow: inset 4px 4px 1px #2c613e;
+    border-radius: 4px;
+    font-family: 'Wonder';
+    font-weight: 300;
+    margin-top: 45px;
+    height: 80px;    
+    width: 80%;
+}
+
+.form {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.search-t {
+    align-self: center;
+    border: solid 1px black;
+    border-radius: 4px;
+    box-shadow: inset 3px 3px 1px #888888;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    padding: 6px;
+    height: 40px;
+    width: 50%;
+}
+
+.search-s {
+    background: #444444;
+    border-radius: 4px;
+    box-shadow: -4px 4px 1px #222222;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    height: 40px;
+    outline: none;
+    width: 20%;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-evenly;
+}
+
+button {
+    background: #444444;
+    border-radius: 4px;
+    box-shadow: -4px 4px 1px #222222;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    height: 50px;
+    outline: none;
+    width: 35%;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: none;
+    transform: translate(-4px, 4px);
+}
+
+.right {
+    justify-content: center;
+    border: solid 1px black;
+    border-left: none;
+    border-radius: 0px 16px 16px 0px;
+    box-shadow: -6px 6px 1px #8e062a;
+    background: #d30a40;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 15px;
+    height: 500px;
+    width: 400px;
+    z-index: 0;
+}
+
+.right > .stats {
+    align-self: center;
+    margin: 0;
+    height: 400px;
+}
