@@ -3,17 +3,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
+    font-family: 'Pixeloid';
+    src: url('../../assets/fonts/pixeloid-font/PixeloidMono-d94EV.ttf') format('truetype');
+
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
     font-family: 'Wonder';
     src: url('../../assets/fonts/8bit_wonder/8-BITWONDER.TTF') format('truetype');
 
     font-style: normal;
     font-weight: normal;
-  }
+}
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -37,15 +45,15 @@ main {
 
 .expand {
     align-self: center;
-    width: 50px;
     height: 25px;
     transform: translateY(2px);
     transition: all 100ms ease-in;
+    width: 50px;
     z-index: 0;
 }
 
-.expand:active {
-    transform: translateY(85%);
+.open {
+    transform: translateY(15px);
 }
 
 
@@ -74,8 +82,8 @@ main {
     box-shadow: -3px 6px 1px #808080;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
     height: 320px;
+    margin-top: 20px;
     width: 80%;
 }
 
@@ -95,21 +103,31 @@ main {
     width: 10px;
 }
 
-.image {
-    margin-top: 10px;
+.display {
+    align-items: center;
     align-self: center;
+    background-color: rgba(0, 0, 0, 0.3);
     border: solid 1px;
     border-radius: 6px;
+    display: flex;
     height: 200px;
+    justify-content: center;
+    margin-top: 10px;
+    overflow: hidden;
     width: 90%;
+}
+
+.display > img {
+    width: 188px
 }
 
 .nn {
     align-self: center;
     align-items: center;
-    border: solid 1px red;
     display: flex;
     font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
     height: 50px;
     justify-content: end;
     margin-top: 15px;
@@ -118,14 +136,17 @@ main {
 
 .stats {
     align-self: center;
+    align-items: center;
     border: solid 1px;
     background: #61872d;
     box-shadow: inset 4px 4px 1px #2c613e;
     border-radius: 4px;
+    display: flex;
     font-family: 'Wonder';
     font-weight: 300;
-    margin-top: 45px;
     height: 80px;    
+    justify-content: center;
+    margin-top: 45px;
     width: 80%;
 }
 
@@ -144,9 +165,9 @@ main {
     box-shadow: inset 3px 3px 1px #888888;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
+    height: 40px;
     outline: none;
     padding: 6px;
-    height: 40px;
     width: 50%;
 }
 
@@ -165,8 +186,8 @@ main {
 
 .buttons {
     display: flex;
-    margin-top: 15px;
     justify-content: space-evenly;
+    margin-top: 15px;
 }
 
 button {
@@ -192,7 +213,6 @@ button:active {
 }
 
 .right {
-    justify-content: center;
     border: solid 1px black;
     border-left: none;
     border-radius: 0px 16px 16px 0px;
@@ -201,14 +221,28 @@ button:active {
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
-    margin-top: 15px;
     height: 500px;
+    justify-content: center;
+    margin-top: 15px;
+    transition: all 150ms ease-in-out;
     width: 400px;
     z-index: 0;
 }
 
 .right > .stats {
     align-self: center;
-    margin: 0;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Pixeloid';
+    font-size: 14px;
+    font-weight: 700;
     height: 400px;
+    justify-content: space-evenly;
+    margin: 0;
+    padding-left: 10px;
+}
+
+div.open {
+    transform: translateX(-390px);
 }
