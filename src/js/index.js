@@ -18,7 +18,6 @@ const speed = document.querySelector('.speed');
 const weight = document.querySelector('.weight');
 const height = document.querySelector('.height');
 
-
 function searchPokemon(input){
     getData(input)
     .then(pokemon => {
@@ -42,10 +41,20 @@ function searchPokemon(input){
     });
 }
 
-search_s.addEventListener('click', ()=> {
-    searchPokemon(`${api}/${search_t.value}`);
-    clearFields();
+function main(){
+    if(search_t.value){
+        searchPokemon(`${api}/${search_t.value}`);
+        clearFields();
+    }
+}
+
+search_t.addEventListener("keypress", (e) => {
+    if(e.key === "Enter") {
+        main();
+    }
 });
+
+search_s.addEventListener('click', main());
 
 next.addEventListener('click', () =>{
     clearFields();
