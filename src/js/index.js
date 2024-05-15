@@ -43,7 +43,7 @@ function searchPokemon(input){
 
 function main(){
     if(search_t.value){
-        searchPokemon(`${api}/${search_t.value}`);
+        searchPokemon(`${api}/${parseInt(search_t.value)}`);
         clearFields();
     }
 }
@@ -54,19 +54,15 @@ search_t.addEventListener("keypress", (e) => {
     }
 });
 
-search_s.addEventListener('click', main());
+search_s.addEventListener('click', main);
+next.addEventListener('click', ()=>{nextPrevious('+')});
+previous.addEventListener('click', ()=>{nextPrevious('-')});
 
-next.addEventListener('click', () =>{
+function nextPrevious(mm){
     clearFields();
-    var next = parseInt((nn.innerText).substring(1, 5), 10) + 1;
-    searchPokemon(`${api}/${next}`);
-});
-
-previous.addEventListener('click', () =>{
-    clearFields();
-    var previous = parseInt((nn.innerText).substring(1, 5), 10) - 1;
-    searchPokemon(`${api}/${previous}`);
-});
+    let nextPrevious = eval(`parseInt((nn.innerText).substring(1, 5), 10) ${mm} 1`);
+    searchPokemon(`${api}/${nextPrevious}`);
+}
 
 function clearFields(){
     search_t.value = '';
